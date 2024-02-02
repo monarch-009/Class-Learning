@@ -1,0 +1,65 @@
+body{
+    background-color: #72dd72;
+    margin: 0;
+    padding: 0;
+}
+h3{
+    text-align: center;
+   
+}
+.container{
+    margin: 0 auto;
+    width: 330px;
+    background-color: #33880c;
+    opacity: 0.9;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #000;
+}
+.name{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin: 5px;
+}
+.gender{
+    /* padding-top: 5px;
+    padding-bottom: 5px; */
+    margin: 5px;
+}
+.city{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin: 5px;
+}
+
+.address  {
+    display: flex;
+   align-items: center;;  
+}
+.address label{
+    padding-right: 10px;
+}
+
+.password{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin: 5px;
+}
+.file{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin: 5px;
+}
+.checkbox{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin: 5px;
+}
+.btn{
+    align-items: center;
+    padding: 5px;
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+    
+}
