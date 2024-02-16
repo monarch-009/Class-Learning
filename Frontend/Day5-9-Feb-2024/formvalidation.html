@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fronend Learning</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <!-- The onclick and onsubmit are event arrtibutes in HTML that allow you to attach a js code to certain user actions. They are used to define behavior assoiciated with specific event -->
+
+    <div>
+        <h1>Form Validation</h1>
+    </div>
+    <br>
+    <div class="container">
+        <form action="formvalidation.php" method="post" onsubmit="return validateForm()">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <span id="nameError"></span>
+            <br><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <span id="emailError"></span>
+            <br><br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <span id="passwordError"></span>
+            <br><br>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+
+    <script>
+        function validateForm() {
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+            var nameError = document.getElementById("nameError");
+            var emailError = document.getElementById("emailError");
+            var passwordError = document.getElementById("passwordError");
+            var formIsValid = true;
+
+            if (name == "") {
+                nameError.textContent = "Name is required";
+                formIsValid = false;
+            } else {
+                nameError.textContent = "";
+            }
+
+            if (email == "") {
+                emailError.textContent = "Email is required";
+                formIsValid = false;
+            } else {
+                emailError.textContent = "";
+            }
+
+            if (password == "") {
+                passwordError.textContent = "Password is required";
+                formIsValid = false;
+            } else {
+                passwordError.textContent = "";
+            }
+
+            return formIsValid;
+        }
+
+
+        
+    </script>
+
+
+</body>
+
+</html>
