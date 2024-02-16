@@ -1,0 +1,58 @@
+header {
+    background-color: lightblue;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+  }
+  
+  nav {
+    background-color: wheat;
+    padding: 10px; 
+    border-radius: 5px;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;  
+  }
+  
+  nav li {
+    float: left;  
+  }
+  
+  nav li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  nav li a:hover {
+      border-radius: 15px;
+    background-color: #cebe7f;
+    color: white;
+  }
+  
+  main {
+    padding: 20px;  
+  }
+
+  #btn{
+    background-color: transparent(0, 0, 0, 0.5);
+    color: rgb(0, 0, 0);
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: 2px solid black;
+    cursor: pointer;
+
+    border-radius: 10px;
+
+  }
+  footer {
+    background-color: lightblue;
+    padding: 10px;
+    text-align: center; 
+  }
