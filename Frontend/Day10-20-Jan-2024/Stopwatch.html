@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StopWatch</title>
+
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: rgb(132, 126, 126);
+        }
+        #stopwatch{
+            font-size: 50px;
+            text-align: center;
+            margin-top: 50px;
+        }
+        h1{
+            text-align: center;
+            margin-top: 50px;
+        }
+        .btn{
+            text-align: center;
+        }
+        button{
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 20px;
+            cursor: pointer;  
+            background-color: rgb(80, 80, 65);
+            border: none;
+            border-radius: 20px;
+            color: rgb(255, 255, 255);
+            box-shadow: 10px 10px 20px rgb(0, 0, 0);
+        }
+
+    </style>
+</head>
+<body>
+    <!-- StopWatch -->
+    <h1>StopWatch</h1>
+    <div id="stopwatch">00:00:00</div>
+    <div class="btn">
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+    </div>
+
+
+    <script>
+        let seconds = 0;
+        let minutes = 0;
+        let hours = 0;
+        let displaySeconds = 0;
+        let displayMinutes = 0;
+        let displayHours = 0;
+        let interval = null;
+        let status = "stopped";
+
+        function stopWatch(){
+            seconds++;
+            if(seconds / 60 === 1){
+                seconds = 0;
+                minutes++;
+                if(minutes / 60 === 1){
+                    minutes = 0;
+                    hours++;
+                }
+            }
+
+            if(seconds < 10){ // 
+                displaySeconds = "0" + seconds.toString();
+            }else{
+                displaySeconds = seconds;
+            }
+
+            if(minutes < 10){
+                displayMinutes = "0" + minutes.toString();
+            }else{
+                displayMinutes = minutes;
+            }
+
+            if(hours < 10){
+                displayHours = "0" + hours.toString();
+            }else{
+                displayHours = hours;
+            }
+
+            document.getElementById("stopwatch").innerHTML = displayHours + ":" + displayMinutes + ":" + displaySeconds;
+        }
+
+        document.getElementById("start").addEventListener("click", function(){
+            if(status === "stopped"){
+                interval = window.setInterval(stopWatch, 1000); // 1000ms = 1s -> 1s interval for stopwatch
+                document.getElementById("start").innerHTML = "Pause";
+                status = "started";
+            }else{
+                window.clearInterval(interval);
+                document.getElementById("start").innerHTML = "Start";
+                status = "stopped";
+            }
+        });
+
+        document.getElementById("stop").addEventListener("click", function(){
+            window.clearInterval(interval);
+            document.getElementById("start").innerHTML = "Start";
+            status = "stopped";
+            seconds = 0;
+            minutes = 0;
+            hours = 0;
+            document.getElementById("stopwatch").innerHTML = "00:00:00";
+        });
+    </script>
+    
+</body>
+</html>
